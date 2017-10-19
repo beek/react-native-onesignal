@@ -104,7 +104,7 @@ OSNotificationOpenedResult* coldStartOSNotificationOpenedResult;
     NSDictionary *json = [NSJSONSerialization JSONObjectWithData:objectData
                                                          options:NSJSONReadingMutableContainers
                                                            error:&jsonError];
-    double delayInSeconds = 3.0;
+    double delayInSeconds = 3.5;
     dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
     dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
         [curRCTBridge.eventDispatcher sendAppEventWithName:@"remoteNotificationOpened" body:json];
